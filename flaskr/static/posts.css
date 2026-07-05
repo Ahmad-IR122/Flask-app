@@ -1,0 +1,27 @@
+.post-card {
+  border: none;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12) !important;
+}
+
+.card-title {
+  font-weight: 700;
+}
+
+.card-text {
+  color: #555;
+  line-height: 1.8;
+}
+
+.btn-primary {
+  border-radius: 10px;
+}
+
+.btn-outline-secondary {
+  border-radius: 8px;
+}
