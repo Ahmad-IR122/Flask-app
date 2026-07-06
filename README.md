@@ -1,238 +1,141 @@
-# 🚀 Flask Blog Application
+# Flask Blog Application
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Flask-3.x-000000?style=for-the-badge&logo=flask&logoColor=white">
-  <img src="https://img.shields.io/badge/Python-3.13+-3776AB?style=for-the-badge&logo=python&logoColor=white">
-  <img src="https://img.shields.io/badge/SQLite-Database-003B57?style=for-the-badge&logo=sqlite&logoColor=white">
-  <img src="https://img.shields.io/badge/Jinja2-Templates-B41717?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Docker-Ready-2496ED?style=for-the-badge&logo=docker&logoColor=white">
-</p>
+A modern Flask blog app with user authentication, SQLite persistence, and clean Jinja2 templates.
 
-<p align="center">
-A modern Flask blog application featuring authentication, CRUD operations, SQLite integration, and reusable Jinja templates.
-</p>
+## Highlights
 
----
+- User registration and login/logout
+- Session-based authentication
+- Full blog CRUD (create, edit, delete)
+- SQLite database with schema initialization
+- Responsive HTML/CSS templates
+- Docker support for containerized runs
 
-# ✨ Features
+## Tech Stack
 
-✅ User Registration
+- Python 3.13+
+- Flask 3.x
+- SQLite
+- Jinja2
+- HTML/CSS
+- Docker
 
-✅ User Login & Logout
-
-✅ Session Authentication
-
-✅ Create Posts
-
-✅ Edit Posts
-
-✅ Delete Posts
-
-✅ SQLite Database
-
-✅ Responsive UI
-
-✅ Bootstrap 5 Styling
-
-✅ Docker Support
-
----
-
-# 🛠️ Tech Stack
-
-| Technology | Purpose |
-|------------|---------|
-| 🐍 Python | Backend |
-| 🌶 Flask | Web Framework |
-| 🗄 SQLite | Database |
-| 🎨 Bootstrap 5 | UI Design |
-| 📄 Jinja2 | Templates |
-| 🐳 Docker | Containerization |
-
----
-
-# 📂 Project Structure
+## Repository Structure
 
 ```text
 Flask-app/
-│
 ├── app.py
 ├── dockerfile
 ├── pyproject.toml
-├── README.md
-│
 ├── flaskr/
 │   ├── __init__.py
 │   ├── auth.py
 │   ├── blog.py
 │   ├── db.py
 │   ├── schema.sql
-│   │
 │   ├── static/
-│   │   ├── style.css
-│   │   ├── create.css
-│   │   └── posts.css
-│   │
 │   └── templates/
-│       ├── base.html
-│       ├── auth/
-│       │   ├── login.html
-│       │   └── register.html
-│       └── blog/
-│           ├── create.html
-│           ├── update.html
-│           └── index.html
-│
 └── instance/
 ```
 
----
+## Quick Start
 
-# 🌐 Application Routes
-
-## 🏠 Home
-
-| Method | Route | Description |
-|---------|-------|-------------|
-| GET | `/` | Blog Homepage |
-| GET | `/hello` | Hello Flask Example |
-
----
-
-## 🔐 Authentication
-
-| Method | Route |
-|---------|-------|
-| GET / POST | `/auth/register` |
-| GET / POST | `/auth/login` |
-| GET | `/auth/logout` |
-
----
-
-## 📝 Blog
-
-| Method | Route |
-|---------|-------|
-| GET / POST | `/create` |
-| GET / POST | `/<int:id>/update` |
-| POST | `/<int:id>/delete` |
-
----
-
-# ⚙️ Installation
-
-## 1️⃣ Clone the Repository
+### 1) Clone
 
 ```bash
-git clone https://github.com/yourusername/flask-app.git
+git clone https://github.com/Ahmad-IR122/Flask-app.git
+cd Flask-app
 ```
 
-```bash
-cd flask-app
-```
+### 2) Create virtual environment
 
----
+**Windows (PowerShell)**
 
-## 2️⃣ Create Virtual Environment
-
-Windows
-
-```bash
+```powershell
 python -m venv venv
+venv\Scripts\Activate.ps1
 ```
 
-```bash
-venv\Scripts\activate
-```
-
-Linux / macOS
+**macOS/Linux**
 
 ```bash
 python3 -m venv venv
-```
-
-```bash
 source venv/bin/activate
 ```
 
----
-
-## 3️⃣ Install Dependencies
+### 3) Install dependencies
 
 ```bash
 pip install -e .
 ```
 
----
-
-## 4️⃣ Initialize Database
+### 4) Initialize database
 
 ```bash
 flask --app flaskr init-db
 ```
 
----
-
-## 5️⃣ Run the Server
+### 5) Run the app
 
 ```bash
 flask --app flaskr run --debug
 ```
 
-Visit
+Open your browser at:
 
-```
+```text
 http://127.0.0.1:5000
 ```
 
----
+## Main Routes
 
-# 🐳 Docker
+### General
 
-Build
+- `GET /` — Blog homepage
+- `GET /hello` — Example hello endpoint
+
+### Authentication
+
+- `GET, POST /auth/register`
+- `GET, POST /auth/login`
+- `GET /auth/logout`
+
+### Blog
+
+- `GET, POST /create`
+- `GET, POST /<int:id>/update`
+- `POST /<int:id>/delete`
+
+## Docker
+
+Build image:
 
 ```bash
 docker build -f dockerfile -t flask-app .
 ```
 
-Run
+Run container:
 
 ```bash
 docker run --rm -p 5000:5000 flask-app
 ```
 
----
+## Database Notes
 
-# 🗄 Database
+- Schema file: `flaskr/schema.sql`
+- SQLite DB file is created in: `instance/`
 
-The project uses **SQLite**.
-
-Database schema:
-
-```
-flaskr/schema.sql
-```
-
-The generated database is stored inside:
-
-```
-instance/
-```
-
----
-
-# 👨‍💻 Author
+## Author
 
 **Ahmad**
 
-📧 Email: irsheidahmad094@gmail.com
+- GitHub: https://github.com/Ahmad-IR122
+- Email: irsheidahmad094@gmail.com
 
-💼 GitHub: https://github.com/Ahmad-IR122
+## License
 
----
-
-# ⭐ Support
-
-If you found this project useful, consider giving it a ⭐ on GitHub.
+Add a `LICENSE` file (e.g., MIT) if you want to specify usage terms.
 
 ---
+
+If this project helped you, consider giving it a ⭐ on GitHub.
